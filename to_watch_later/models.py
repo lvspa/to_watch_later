@@ -5,6 +5,7 @@ class Movie (models.Model):
     name_movie=models.CharField(max_length=100)
     gen=models.CharField(max_length=100)
     duration=models.IntegerField()
+    poster=models.ImageField()
     #data_add=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -13,7 +14,7 @@ class Movie (models.Model):
     def __str__(self):
         return self.gen
 
-    def __str__(self):
+    def __int__(self):
         return self.duration
 
 
@@ -27,6 +28,9 @@ class User (models.Model):
 
     def __str__(self):
         return self.email
+
+class RelationUserMovie():
+    
 
 
 
