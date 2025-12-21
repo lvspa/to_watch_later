@@ -1,0 +1,12 @@
+background_color{
+    color: #f62525;
+}
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.titleid{
+    font-family:'BebasNeue' ;
+    src:url('static/fonts') format('ttf');
+    color: black;
+}
