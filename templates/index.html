@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +7,82 @@
     <title>To Watch Later</title>
 </head>
 <body>
-{% extends 'base.html' %}
-
 {% block homebar %}
-    <p>Testing notice</p>
-{% endblock %}
 
+<div class="manifesto-section">
+    <div class="manifesto-container">
+        <p class="manifesto-text">
+            Você já salvou um filme nas conversas do WhatsApp, outro no Instagram, e esqueceu uma série interessante no bloco de notas ?
+            O <strong>To Watch Later</strong> é um só lugar, simples e sem rede social, para você finalmente organizar o que quer assistir.
+            Menos bagunça, mais conteúdo.
+        </p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+
+<div class="two-columns-container">
+
+    <div class="column how-it-works">
+        <h2 class="column-title">Como funciona</h2>
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Crie sua conta</h3>
+                <p>Registro rápido e gratuito para salvar seus filmes.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Adicione filmes</h3>
+                <p>Busque e adicione filmes à sua lista "To Watch Later".</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Marque como visto</h3>
+                <p>Quando assistir, marque e veja seu progresso.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="column get-started">
+        <h2 class="column-title">Comece agora</h2>
+        <div class="feature">
+            <div class="feature-icon">🎬</div>
+            <div class="feature-content">
+                <h3>Lista personalizada</h3>
+                <p>Só seus filmes, do seu jeito.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📱</div>
+            <div class="feature-content">
+                <h3>Acesse em qualquer lugar</h3>
+                <p>Web e mobile, sempre sincronizado.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-content">
+                <h3>Sem distrações</h3>
+                <p>Foco total na sua lista de filmes.</p>
+            </div>
+        </div>
+
+        <div class="cta-center">
+            <a href='{% url 'cads' %}' class="cta-button-large">Criar conta gratuita</a>
+            <p class="small-note">Testing phase - Novos recursos em breve!</p>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
 </body>
 </html>

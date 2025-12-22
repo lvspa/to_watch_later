@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styletw.css' %}">
+    <meta charset="UTF-8">
+    <title>To Watch Later</title>
+
+</head>
+<body>
+{% block logbar %}
+<div class="auth-container">
+
+    <div class="auth-header">
+        <div class="watch-later-container auth-title">
+            <h1 class="titleid">To Watch</h1>
+            <h1 class="title_complement">Later</h1>
+        </div>
+        <p class="auth-subtitle">Volte para sua lista</p>
+    </div>
+
+    <div class="auth-card">
+        <form class="auth-form" id="login-form">
+            <div class="form-group">
+                <label for="login-email">E-mail</label>
+                <input type="email" id="login-email" name="email" placeholder="seu@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="login-password">Senha</label>
+                <input type="password" id="login-password" name="password" placeholder="••••••••" required>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="remember">
+                        <span>Lembrar de mim</span>
+                    </label>
+                    <a href="forgot-password.html" class="forgot-link">Esqueceu a senha?</a>
+                </div>
+            </div>
+
+            <button type="submit" class="auth-button">Entrar</button>
+        </form>
+
+        <div class="auth-divider">
+            <span>ou</span>
+        </div>
+
+        <button class="auth-button secondary">
+            <span class="social-icon">🎬</span>
+            Continuar com Google
+        </button>
+
+        <p class="auth-footer">
+            Novo por aqui? <a href="{% url 'cads' %}" class="auth-link">Crie uma conta</a>
+        </p>
+    </div>
+
+    <div class="login-note">
+        <p>Testing phase • Seus dados são seguros</p>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+</body>
+</html>
