@@ -7,6 +7,8 @@ urlpatterns = [
     # e no html o {% url 'cads' %} para acesso
     path('', views.index,name='index'),
     path('templates/cads.html', views.cads,name='cads'),
+    path('template/login.html', views.login,name='login')
+
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
