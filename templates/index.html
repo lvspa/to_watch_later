@@ -1,13 +1,24 @@
-{% extends 'base.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+      {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - To Watch Later</title>
+    <link rel="stylesheet" href="{% static 'css/styletw.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>To Watch Later</title>
 </head>
 <body>
 {% block homebar %}
+    <div class="watch-later-container">
+    <h1 class="titleid">To Watch</h1>
+    <h1 class="title_complement">Later</h1>
+</div>
 
 <div class="manifesto-section">
     <div class="manifesto-container">

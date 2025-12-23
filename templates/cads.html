@@ -1,63 +1,61 @@
-{% extends 'base.html' %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>To Watch Later</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - To Watch Later</title>
+    <link rel="stylesheet" href="{% static 'css/styletw.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
 </head>
 <body>
-
-{% block cadsbar %}
-<h1>testing</h1>
-
-<div class="auth-container">
-
-    <div class="auth-card">
-        <form class="auth-form" id="signup-form">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name" placeholder="Seu nome" required>
+    <div class="auth-container">
+        <div class="auth-header">
+            <div class="watch-later-container auth-title">
+                <h1 class="titleid">To Watch</h1>
+                <h1 class="title_complement">Later</h1>
             </div>
-
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="••••••••" required>
-                <p class="password-hint">Mínimo 8 caracteres</p>
-            </div>
-
-            <div class="form-group">
-                <label for="confirm-password">Confirmar senha</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••" required>
-            </div>
-
-            <button type="submit" class="auth-button">Criar conta</button>
-        </form>
-
-        <div class="auth-divider">
-            <span>ou</span>
+            <p class="auth-subtitle">Chega de bloco de notas!</p>
         </div>
 
-        <button class="auth-button secondary">
-            <span class="social-icon">🎬</span>
-            Continuar com Google
-        </button>
+        <div class="auth-card">
+            <form class="auth-form" id="signup-form">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    <p class="password-hint">Mínimo 8 caracteres</p>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar senha</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="auth-button">Criar conta</button>
+            </form>
 
-        <p class="auth-footer">
-            Já tem uma conta? <a href="{% url 'login' %}" class="auth-link">Faça login</a>
-        </p>
+            <div class="auth-divider">
+                <span>ou</span>
+            </div>
+
+            <button class="auth-button secondary">
+                <span class="social-icon">🎬</span>
+                Continuar com Google
+            </button>
+
+            <p class="auth-footer">
+                Já tem uma conta? <a href="{% url 'login' %}" class="auth-link">Faça login</a>
+            </p>
+        </div>
+
     </div>
-
-    <div class="auth-manifesto">
-        <p>Menos bagunça, mais filme.</p>
-    </div>
-</div>
-
-{% endblock %}
 </body>
 </html>

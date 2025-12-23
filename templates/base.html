@@ -1,14 +1,26 @@
+{% load static %}
+{% block logbar %}{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styletw.css' %}">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>To Watch Later</title>
+    <title >To Watch Later</title>
 </head>
 <body>
 
-<a href='{% url 'index' %}'>To Watch Later</a>
+<a href='{% url 'index' %}'></a>
+<a href='{% url 'cads' %}'></a>
 
+<div class="watch-later-container">
+    <h1 class="titleid">To Watch</h1>
+    <h1 class="title_complement">Later</h1>
+</div>
+
+<hr>
 {% block homebar %}{% endblock %}
+{% block cadsbar %}{% endblock %}
+
 
 
 </body>
