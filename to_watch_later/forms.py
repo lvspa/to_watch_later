@@ -8,13 +8,13 @@ from .models import User
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 
-
+#conectar o front para enviar os dados
 
 class CadastroForm(forms.ModelForm):
-    username = forms.CharField(max_length=150)
+    username = forms.CharField(max_length=150,required=True)
     email=forms.CharField(max_length=200,required=True)
-    password = forms.CharField(widget=forms.PasswordInput)
-    confirm_password=forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput,required=True)
+    confirm_password=forms.CharField(widget=forms.PasswordInput,required=True)
     class Meta:
         model= User
         fields = ['username', 'email','password']
