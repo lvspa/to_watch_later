@@ -1,7 +1,7 @@
-from tkinter.font import names
-
+from django.contrib.auth.decorators import login_required
+from django.db.transaction import commit
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
-
 from to_watch_later.forms import CadastroForm
 from django.contrib.auth.models import User
 
@@ -19,29 +19,27 @@ def home_user(request):
     return render(request,'/home/Alexandre/PycharmProjects/DjangoProject/ToWatchLater/templates/home_user.html')
 
 
-
-
 def cadastro(request):
     if request.method=='POST':
-        form=CadastroForm(request.POST)ls
-
+        form=CadastroForm(request.POST)
         if form.is_valid():
+            return JsonResponse ({
+                'success': True,
+                'message': 'Usuário criado!',
+                'redirect_url': '/home_user/'
+            })
+    else:
+        return JsonResponse({
+            'success': False,
+            'message': 'Erro ao criar usuário.',
+            'redirect_url': '/cads/'
+        })
 
-            name=form.cleaned_data['name']
-            user_name=form.cleaned_data[' user_name']
-            user_email=form.cleaned_data['user_email']
-            password=form.cleaned_data['password']
+    form = CadastroForm()
+    return render(request, 'cads.html', {'form': form})
 
-            User.objects.create_user(
-            name=name,
-            username=user_name,
-            email=user_email,
-            password=password
-         )
-            return redirect('home')
+#def login_user(request):
 
-        else:
-            return render(request, 'cadastro.html', {'form': form})
 
 
 
