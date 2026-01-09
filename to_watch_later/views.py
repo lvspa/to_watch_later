@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from to_watch_later.forms import CadastroForm
 from django.contrib.auth.models import User
+import json
 
 
 def index(request):
@@ -21,7 +22,11 @@ def home_user(request):
 
 def cadastro(request):
     if request.method=='POST':
-        form=CadastroForm(request.POST)
+        data_body=request.body()
+        data_encond=data_body.decode(encoding='UTF-8',errors='strict')
+        json_to_dic=json.loads(data_encond)
+        form=CadastroForm(json_to_dic)
+
         if form.is_valid():
             return JsonResponse ({
                 'success': True,
