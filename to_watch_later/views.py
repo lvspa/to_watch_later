@@ -10,38 +10,39 @@ import json
 def index(request):
     return render(request,'/home/Alexandre/PycharmProjects/DjangoProject/ToWatchLater/templates/index.html')
 
-def cads(request):
-    return render(request,'/home/Alexandre/PycharmProjects/DjangoProject/ToWatchLater/templates/cads.html')
+def re_cads(request):
+    return render(request,'/home/Alexandre/PycharmProjects/DjangoProject/ToWatchLater/templates/cadastro/cads.html')
 
 def login(request):
-    return render(request,'/home/Alexandre/PycharmProjects/DjangoProject/ToWatchLater/templates/login.html')
+    return render(request,'/home/Alexandre/PycharmProjects/DjangoProject/ToWatchLater/templates/login/login.html')
 
 def home_user(request):
-    return render(request,'/home/Alexandre/PycharmProjects/DjangoProject/ToWatchLater/templates/home_user.html')
+    return render(request,'/home/Alexandre/PycharmProjects/DjangoProject/ToWatchLater/templates/home/home_user.html')
 
 
-def cadastro(request):
+def cads(request):
     if request.method=='POST':
-        data_body=request.body()
+        data_body=request.body
         data_encond=data_body.decode(encoding='UTF-8',errors='strict')
         json_to_dic=json.loads(data_encond)
         form=CadastroForm(json_to_dic)
-
         if form.is_valid():
             return JsonResponse ({
                 'success': True,
                 'message': 'Usuário criado!',
                 'redirect_url': '/home_user/'
             })
-    else:
-        return JsonResponse({
-            'success': False,
-            'message': 'Erro ao criar usuário.',
-            'redirect_url': '/cads/'
-        })
+        else:
+            return JsonResponse({
+                'success':False,
+                'errors':print(form.errors.get_json_data())
+            })
 
-    form = CadastroForm()
-    return render(request, 'cads.html', {'form': form})
+    else:
+        form = CadastroForm()
+        return render(request, 'cadastro/cads.html', {'form': form})
+    
+
 
 #def login_user(request):
 
