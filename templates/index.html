@@ -1,99 +1,87 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-      {% load static %}
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - To Watch Later</title>
+    <title>Vence.ME - Gestão de Prazos Inteligente</title>
     <link rel="stylesheet" href="{% static 'css/styletw.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <title>To Watch Later</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-{% block homebar %}
-    <div class="watch-later-container">
-    <h1 class="titleid">To Watch</h1>
-    <h1 class="title_complement">Later</h1>
+
+<div class="watch-later-container">
+    <h1 class="titleid">Vence</h1>
+    <h1 class="title_complement">.ME</h1>
 </div>
 
 <div class="manifesto-section">
     <div class="manifesto-container">
         <p class="manifesto-text">
-            Você já salvou um filme nas conversas do WhatsApp, outro no Instagram, e esqueceu uma série interessante no bloco de notas ?
-            O <strong>To Watch Later</strong> é um só lugar, simples e sem rede social, para você finalmente organizar o que quer assistir.
-            Menos bagunça, mais conteúdo.
+            Você ainda depende de planilhas ou da memória para prazos críticos?
+            O <strong>Vence.ME</strong> centraliza alvarás, impostos e contratos com alertas automáticos.
+            <strong>Menos multas, mais controle profissional.</strong>
         </p>
     </div>
 </div>
 
-<hr class="section-divider">
-
-
 <div class="two-columns-container">
-
     <div class="column how-it-works">
         <h2 class="column-title">Como funciona</h2>
         <div class="step">
             <div class="step-number">1</div>
             <div class="step-content">
-                <h3>Crie sua conta</h3>
-                <p>Registro rápido e gratuito para salvar seus filmes.</p>
+                <h3>Registre o Prazo</h3>
+                <p>Cadastre alvarás, licenças ou qualquer data de vencimento importante.</p>
             </div>
         </div>
         <div class="step">
             <div class="step-number">2</div>
             <div class="step-content">
-                <h3>Adicione filmes</h3>
-                <p>Busque e adicione filmes à sua lista "To Watch Later".</p>
+                <h3>Configure o Alerta</h3>
+                <p>Escolha com quantos dias de antecedência você deseja ser notificado.</p>
             </div>
         </div>
         <div class="step">
             <div class="step-number">3</div>
             <div class="step-content">
-                <h3>Marque como visto</h3>
-                <p>Quando assistir, marque e veja seu progresso.</p>
+                <h3>Foque no Negócio</h3>
+                <p>O sistema vigia seus prazos e te avisa por e-mail e no dashboard.</p>
             </div>
         </div>
     </div>
 
-    <div class="vertical-divider"></div>
-
     <div class="column get-started">
-        <h2 class="column-title">Comece agora</h2>
+        <h2 class="column-title">Vantagens SaaS</h2>
         <div class="feature">
-            <div class="feature-icon">🎬</div>
+            <div class="feature-icon">🛡️</div>
             <div class="feature-content">
-                <h3>Lista personalizada</h3>
-                <p>Só seus filmes, do seu jeito.</p>
+                <h3>Segurança Total</h3>
+                <p>Seus dados protegidos e prazos sempre monitorados 24/7.</p>
             </div>
         </div>
         <div class="feature">
-            <div class="feature-icon">📱</div>
+            <div class="feature-icon">🔔</div>
             <div class="feature-content">
-                <h3>Acesse em qualquer lugar</h3>
-                <p>Web e mobile, sempre sincronizado.</p>
+                <h3>Notificações</h3>
+                <p>Receba alertas diretos para não ser pego de surpresa.</p>
             </div>
         </div>
         <div class="feature">
-            <div class="feature-icon">🎯</div>
+            <div class="feature-icon">📈</div>
             <div class="feature-content">
-                <h3>Sem distrações</h3>
-                <p>Foco total na sua lista de filmes.</p>
+                <h3>Visibilidade</h3>
+                <p>Dashboard limpo para visualizar o que vence hoje em segundos.</p>
             </div>
         </div>
 
         <div class="cta-center">
-            <a href='{% url 'cads' %}' class="cta-button-large">Criar conta gratuita</a>
-            <p class="small-note">Testing phase - Novos recursos em breve!</p>
+            <a href="{% url 'cads' %}" class="cta-button-large">Começar Agora Grátis</a>
+            <p class="small-note">Versão Beta - Desenvolvido para pequenas e médias empresas.</p>
         </div>
-
     </div>
 </div>
 
-{% endblock %}
 </body>
 </html>
